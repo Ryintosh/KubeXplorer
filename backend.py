@@ -4,7 +4,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return 'Home'
+    test = data.getCredentials("test","test")
+    return str(test)
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -17,3 +18,15 @@ def login():
 
 if __name__ == '__main__':
     app.run()
+
+@app.route('/intialize')
+def intialize():
+    data.intialize()
+
+@app.route('/logcollection')
+def logCollection():
+    pass
+
+@app.route('/update')
+def update():
+    pass
